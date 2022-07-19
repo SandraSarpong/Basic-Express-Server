@@ -12,9 +12,7 @@ const detailsRoutes = require('./routes/detailsRoutes');
 
 const {json} = require('express');
 
-const dbURI = 'mongodb+srv://Shandibenz:Dntbrkmahrt1@cluster0.eogeo.mongodb.net/basicExpressServer?retryWrites=true&w=majority';
-
-mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(function(result) {
         console.log('Database is connected');
     })
